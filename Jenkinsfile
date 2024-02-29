@@ -1,11 +1,12 @@
 pipeline {
-    agent {label 'agentlinux'} 
+    agent any
+
+    tools {nodejs "nodejs"}
+    
     stages {
         stage('Build') { 
             steps {
-                sh 'apt-get update && apt-get -y install sudo'
-                sh 'sudo install npm'
-                sh 'npm run build' 
+                sh 'npm install' 
             }
         }
     }
