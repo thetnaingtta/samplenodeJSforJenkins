@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'apt-get -y install sudo'
+                sh 'RUN apt-get update && apt-get -y install sudo'
                 sh 'sudo install npm'
                 sh 'npm run build' 
             }
